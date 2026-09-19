@@ -36,3 +36,5 @@ summary, what was modified. Log it here as work happens.
 - **2026-09-19** — Claude Code (Opus 5): scaffolded repo structure and wrote the
   README, SUBMISSION.md, CLAUDE.md and this log; extracted and summarised the
   official PDFs/DOCXs. Documentation only — no pipeline code written yet.
+
+- **2026-09-19** — note repo is private and flag Samsung docs before going public

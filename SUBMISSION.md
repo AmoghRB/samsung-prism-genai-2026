@@ -34,7 +34,7 @@ exist. Confirm the real date with the organisers — this is worth one email.
 
 | # | Item | Status | Notes |
 |---|---|---|---|
-| 1 | GitHub repo, public or shared | ☐ | FAQ Q17. Judges clone it. |
+| 1 | GitHub repo, public or shared | ⚠️ **private** | Repo exists: `AmoghRB/samsung-prism-genai-2026`. Currently **private** — see below before flipping it public. |
 | 2 | README, reproducible setup | ☑ draft | "Reproducible setup instructions" is the wording — test on a clean machine. |
 | 3 | Dockerfile | ☐ | Explicitly named in FAQ Q17. |
 | 4 | Release tag `PRISM_GENAI_HACKATHON_Y2026` | ☐ | **The tagged commit is judged.** All referenced material must be in that commit (FAQ Q19). |
@@ -129,7 +129,16 @@ Hackathon 3.0."*
 ### 3. Deadline 25 vs 27 Sep ⚠️ UNRESOLVED
 See above. Mitigated by building to the 25th.
 
-### 4. CSV vs JSON
+### 4. Samsung's own documents are in this repo ⚠️
+`docs/` contains Samsung's theme guides, FAQ, PPT template and participant kit.
+The repo must be public or shared by submission, but making it public as-is
+republishes Samsung's material.
+
+**Action before going public:** either move `docs/` out of the repo and gitignore
+it, or share the repo privately with the judges instead (FAQ Q17 allows "public
+**or shared**"). Do not flip this repo to public without handling that first.
+
+### 5. CSV vs JSON
 The theme guide's Screening section says "csv file", but the sample code and the
 release instructions both produce and upload **JSON**. The FAQ doesn't address
 it. **Produce the JSON** as the sample code specifies, and note it in the
