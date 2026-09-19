@@ -6,7 +6,7 @@ Given a library of code and a natural-language query, return the code snippets
 ranked by how relevant they are to that query.
 
 > **Status: in development.** The retrieval pipeline is being built during
-> 19–27 Sep 2026. Sections marked _WIP_ are not implemented yet. This notice
+> 19–25 Sep 2026. Sections marked _WIP_ are not implemented yet. This notice
 > comes down when the pipeline runs end-to-end.
 
 ---
@@ -16,11 +16,15 @@ ranked by how relevant they are to that query.
 Finding the right block of code is the bottleneck in working with an unfamiliar
 codebase, and it gets worse as the codebase grows. This is a **retrieval**
 problem, not a generation one — given the query *"How is the input preprocessed
-before going to the main function?"*, the job is to rank a `normalize()` helper
-above an unrelated `check()` function.
+before going to the main function?"*, the job is to rank the function that
+actually normalises the input above superficially similar ones.
 
 Answer generation, explanation, and anything downstream of retrieval is
 explicitly **out of scope** for this theme.
+
+**The target language is Python.** The hackathon PPT and the worked example in
+the theme guide both show JavaScript; organiser FAQ Q30 confirms that is a
+mistake — the APPS dataset (Python) is used throughout.
 
 ### Why not just ask an LLM to rank them?
 
@@ -39,11 +43,16 @@ an LLM ranking pass over long text is too slow to sit there.
 | **P1** | Retrieval across versions | Codebases change constantly. Indexes and caches must rebuild for a new version in reasonable time. |
 | **Bonus** | Evolutionary retrieval | Retrieve across *all* versions at once. Hard because versions of the same snippet are near-identical and must still be ranked sensibly. |
 
-### Hard constraint: CPU only
+### Hard constraint: CPU only, and efficiency is scored
 
-The solution is expected to run on **CPU with minimal GPU utilisation**. Every
-model choice here is constrained by that — no large rerankers, no models that
-need a GPU to hit acceptable latency.
+The solution is expected to run on **CPU with minimal GPU utilisation**. Beyond
+that, organiser FAQ Q31 states that *"resource usage (running time, GPU
+requirement, model size, etc.) would be factored in during the evaluation."*
+
+Accuracy alone does not win here. A heavier model that buys a point of NDCG@10
+at several times the latency is a bad trade. Every stage in the pipeline is
+measured on **accuracy, wall-clock latency, and model size together**, and all
+three are reported.
 
 ---
 
