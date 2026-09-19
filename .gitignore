@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Indexes, caches, model weights — rebuildable, and large
+.index/
+.cache/
+*.faiss
+*.bin
+*.pt
+*.safetensors
+models/
+
+# MTEB / HF scratch
+results/
+mteb_results/
+.hf_cache/
+
+# Keep the submitted results file tracked — it is a deliverable
+!appsretrieval_results.json
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Secrets
+.env
+.env.*
