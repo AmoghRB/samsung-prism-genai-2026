@@ -6,7 +6,7 @@ Given a library of code and a natural-language query, return the code snippets
 ranked by how relevant they are to that query.
 
 > **Status: in development.** The retrieval pipeline is being built during
-> 19–25 Sep 2026. Sections marked _WIP_ are not implemented yet. This notice
+> 19–27 Sep 2026. Sections marked _WIP_ are not implemented yet. This notice
 > comes down when the pipeline runs end-to-end.
 
 ---

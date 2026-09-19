@@ -13,7 +13,7 @@ per the theme guide — don't build it, don't propose it.
 ## Hard constraints — do not violate
 - **CPU only.** Minimal GPU utilisation is an explicit requirement. Reject any
   approach that needs a GPU to be fast enough.
-- **Deadline 25 Sep 2026, 11:59 PM IST.** No slipping.
+- **Deadline 27 Sep 2026, 11:59 PM IST.** Confirmed by organiser email 18 Sep — supersedes the 25 Sep date in the deck. No slipping.
 - **The tagged commit is what's judged** — release tag `PRISM_GENAI_HACKATHON_Y2026`.
   Not `main`, not the latest commit. The tag.
 - **The repo must be public.**
