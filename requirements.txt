@@ -1,0 +1,8 @@
+# CPU-only inference stack. Pinned to the versions the submitted numbers were produced with.
+mteb==2.21.8
+sentence-transformers==6.1.0
+transformers==5.17.0
+torch==2.14.0
+numpy==2.5.3
+datasets==5.0.1
+einops==0.8.2

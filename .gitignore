@@ -34,3 +34,15 @@ mteb_results/
 # Secrets
 .env
 .env.*
+
+# Samsung's official documents stay local — the repo goes public and we
+# should not republish their material. Only our index is tracked.
+docs/*
+!docs/README.md
+
+# Experiment caches (embeddings, dataset dump)
+scratch/cache/
+experiments/cache/
+scratch/.venv4/
+scratch/*.txt
+.index/
