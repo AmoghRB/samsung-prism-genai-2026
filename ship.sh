@@ -52,6 +52,6 @@ if git remote get-url origin >/dev/null 2>&1; then
 else
   echo
   echo "committed locally, but no 'origin' remote is set — nothing was pushed." >&2
-  echo "add one with:  git remote add origin git@github.com:AmoghRB/<repo>.git" >&2
+  echo "add one with:  git remote add origin https://github.com/AmoghRB/<repo>.git" >&2
   exit 1
 fi
