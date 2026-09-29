@@ -2,6 +2,7 @@
 
     python -m src.evaluate                 # submitted config, CPU only
     python -m src.evaluate --out my.json
+    python -m src.evaluate --device mps    # same scores, faster bulk encoding on Apple GPU
 
 The pipeline is plugged into MTEB as a `SearchProtocol` model (index + search),
 so MTEB scores exactly our ranking -- including query pre-processing -- with
@@ -59,18 +60,20 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="appsretrieval_results.json")
     ap.add_argument("--profile", default="results/run_profile.json")
+    ap.add_argument("--device", default="cpu",
+                    help="encoding device for the bulk benchmark run; scores do not depend on it")
     args = ap.parse_args()
 
     import mteb
     import torch
     t_start = time.time()
-    retriever = CodeRetriever(DEFAULT, device="cpu")
+    retriever = CodeRetriever(DEFAULT, device=args.device)
     model = PipelineSearch(retriever)
     task = mteb.get_task("AppsRetrieval")
     result = mteb.evaluate(model, [task], encode_kwargs={"batch_size": 16}, overwrite_strategy="always")
     task_result = list(result.task_results)[0]
     with open(args.out, "w") as f:
-        json.dump(task_result.to_dict(), f, indent=2)
+        json.dump(task_result.to_dict(), f, indent=2, default=str)
 
     scores = task_result.scores["test"][0]
     n_params = sum(p.numel() for p in retriever.model.parameters())
@@ -81,7 +84,7 @@ def main():
         recall_at_100=scores.get("recall_at_100"),
         model_params_m=round(n_params / 1e6, 1),
         embed_dim=retriever.dim,
-        device="cpu", torch_threads=torch.get_num_threads(),
+        device=args.device, torch_threads=torch.get_num_threads(),
         cpu=platform.processor() or platform.machine(), platform=platform.platform(),
         peak_rss_mb=round(rss_mb),
         total_wall_s=round(time.time() - t_start, 1),

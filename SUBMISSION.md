@@ -1,10 +1,10 @@
 # Submission Checklist — Samsung PRISM GenAI Hackathon 3.0
 
-**Target: be finished by 25 Sep 2026. Hard deadline 27 Sep.** See the date
-conflict below — build to the earlier date.
+**Deadline: 30 Sep 2026** (moved 25 → 27 → 30 by the later organiser
+announcement that also moved all files to Google Drive).
 
-**Submission form:** https://forms.gle/ZWPsj6LoQqbQXmMz6 — one submission per
-team, one theme (FAQ Q6).
+**Submission form (current):** https://forms.gle/C4u1ox5aQqaJsLuy5 — one submission per
+team, one theme (FAQ Q6). The older 27 Sep form link is superseded.
 
 **Queries:** `prism@samsung.com` (FAQ Q29) or reply to `binny.l@samsung.com`.
 
@@ -34,14 +34,14 @@ exist. Confirm the real date with the organisers — this is worth one email.
 
 | # | Item | Status | Notes |
 |---|---|---|---|
-| 1 | GitHub repo, public or shared | ⚠️ **private** | Repo exists: `AmoghRB/samsung-prism-genai-2026`. Currently **private** — see below before flipping it public. |
-| 2 | README, reproducible setup | ☑ draft | "Reproducible setup instructions" is the wording — test on a clean machine. |
-| 3 | Dockerfile | ☐ | Explicitly named in FAQ Q17. |
-| 4 | Release tag `PRISM_GENAI_HACKATHON_Y2026` | ☐ | **The tagged commit is judged.** All referenced material must be in that commit (FAQ Q19). |
-| 5 | `appsretrieval_results.json` | ☐ | MTEB output, attached to the release. |
-| 6 | Demo video, ≤ 5 min | ☐ | Live queries and responses — not just numbers. |
-| 7 | PPT or PDF, their template | ☐ | Named `MSRIT_Waypoint_...` (FAQ Q12, Q21). |
-| 8 | AI disclosure form | ☐ | Mandatory. Needs per-feature detail — see below. |
+| 1 | GitHub repo, public or shared | ☑ | `AmoghRB/samsung-prism-genai-2026`, public. Samsung docs stripped from history first. |
+| 2 | README, reproducible setup | ☑ | Real numbers, run commands, Docker. |
+| 3 | Dockerfile | ☑ | CPU-only image, weights baked in. |
+| 4 | Release tag `PRISM_GENAI_HACKATHON_Y2026` | ☑ | |
+| 5 | `appsretrieval_results.json` | ☑ | In the repo root and attached to the release. |
+| 6 | Demo video, ≤ 5 min | ☐ | Amogh records — see `DEMO_SCRIPT.md` (local). |
+| 7 | PPT or PDF, their template | ☑ | `MSRIT_Waypoint_Submission.pptx` (local, not in repo). Add video link on slides 5 and 11. |
+| 8 | AI disclosure form | ☑ draft | `MSRIT_Waypoint_AI_Disclosure.docx` (local). Review + sign. |
 | 9 | Google Form submitted | ☐ | Don't finish at 11:58. |
 
 ### The release tag (FAQ Q20 — exact commands)
@@ -116,7 +116,7 @@ compliance confirmation, and a signed sign-off from the team representative.
 
 ## Open risks
 
-### 1. Team name on record ⚠️ UNRESOLVED
+### 1. Team name on record ✅ RESOLVED (23 Sep — MSRIT_Waypoint is on the master list)
 Registration may have gone in as **MSRIT_Lodestar** before the rename to
 **MSRIT_Waypoint**. The convention is `CollegeName_TeamName` and filenames must
 match Samsung's record. **Action:** ask `prism@samsung.com` or reply to
@@ -126,10 +126,10 @@ match Samsung's record. **Action:** ask `prism@samsung.com` or reply to
 The 18 Sep email confirms: *"You're officially registered for the Gen AI
 Hackathon 3.0."*
 
-### 3. Deadline 25 vs 27 Sep ⚠️ UNRESOLVED
+### 3. Deadline ✅ now 30 Sep per the latest announcement
 See above. Mitigated by building to the 25th.
 
-### 4. Samsung's own documents are in this repo ⚠️
+### 4. Samsung's own documents ✅ untracked and removed from history before going public
 `docs/` contains Samsung's theme guides, FAQ, PPT template and participant kit.
 The repo must be public or shared by submission, but making it public as-is
 republishes Samsung's material.

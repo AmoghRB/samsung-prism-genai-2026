@@ -1,1 +1,17 @@
 {"model": "jce05", "maxlen": 512, "ndcg10": 81.16, "mrr10": 77.91, "r1": 70.84, "r100": 97.53, "doc_s": 320.6, "q_s": 337.2}
+{"model": "jce05", "qmode": "raw", "dim": 896, "ndcg10": 81.13, "mrr10": 77.89, "r1": 70.78, "r100": 97.5}
+{"model": "jce05", "qmode": "raw", "dim": 512, "ndcg10": 80.44, "mrr10": 77.19, "r1": 69.8, "r100": 97.42}
+{"model": "jce05", "qmode": "raw", "dim": 256, "ndcg10": 79.91, "mrr10": 76.6, "r1": 69.4, "r100": 97.45}
+{"model": "jce05", "qmode": "raw", "dim": 128, "ndcg10": 78.94, "mrr10": 75.52, "r1": 68.23, "r100": 96.87}
+{"model": "jce05", "qmode": "clean", "dim": 896, "ndcg10": 81.32, "mrr10": 78.07, "r1": 70.94, "r100": 97.53}
+{"model": "jce05", "qmode": "clean", "dim": 512, "ndcg10": 80.79, "mrr10": 77.51, "r1": 70.44, "r100": 97.4}
+{"model": "jce05", "qmode": "clean", "dim": 256, "ndcg10": 80.11, "mrr10": 76.9, "r1": 69.72, "r100": 97.34}
+{"model": "jce05", "qmode": "clean", "dim": 128, "ndcg10": 79.15, "mrr10": 75.79, "r1": 68.47, "r100": 97.0}
+{"model": "jce05", "qmode": "noex", "dim": 896, "ndcg10": 79.86, "mrr10": 76.53, "r1": 69.3, "r100": 97.26}
+{"model": "jce05", "qmode": "noex", "dim": 512, "ndcg10": 79.33, "mrr10": 76.02, "r1": 68.79, "r100": 97.13}
+{"model": "jce05", "qmode": "noex", "dim": 256, "ndcg10": 78.5, "mrr10": 75.12, "r1": 67.78, "r100": 97.08}
+{"model": "jce05", "qmode": "noex", "dim": 128, "ndcg10": 77.6, "mrr10": 74.14, "r1": 66.75, "r100": 96.81}
+{"model": "jce05", "qmode": "iofirst", "dim": 896, "ndcg10": 77.33, "mrr10": 73.65, "r1": 65.82, "r100": 96.89}
+{"model": "jce05", "qmode": "iofirst", "dim": 512, "ndcg10": 76.7, "mrr10": 73.06, "r1": 65.18, "r100": 96.79}
+{"model": "jce05", "qmode": "iofirst", "dim": 256, "ndcg10": 76.02, "mrr10": 72.42, "r1": 64.86, "r100": 96.47}
+{"model": "jce05", "qmode": "iofirst", "dim": 128, "ndcg10": 75.06, "mrr10": 71.36, "r1": 63.51, "r100": 96.12}

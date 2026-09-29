@@ -46,3 +46,9 @@ experiments/cache/
 scratch/.venv4/
 scratch/*.txt
 .index/
+
+# Local submission files (not part of the judged code)
+MSRIT_Waypoint_*.pptx
+MSRIT_Waypoint_*.docx
+MSRIT_Waypoint_*.pdf
+DEMO_SCRIPT.md

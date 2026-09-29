@@ -21,4 +21,12 @@ class PipelineConfig:
 
 
 # Filled in from the benchmark sweep -- see PROGRESS.md.
-DEFAULT = PipelineConfig(model="Alibaba-NLP/gte-modernbert-base")
+# jina-code-embeddings-0.5b, clean queries, full 896-d: NDCG@10 81.32 / MRR@10 78.07
+# on AppsRetrieval test (scratch/results.jsonl). Beat CodeRankEmbed, SFR-400M,
+# gte-modernbert, granite-r2, jina-v2-code and Qwen3-0.6B in the same sweep.
+DEFAULT = PipelineConfig(
+    model="jinaai/jina-code-embeddings-0.5b",
+    query_prompt="Find the most relevant code snippet given the following query:\n",
+    doc_prompt="Candidate code snippet:\n",
+    query_mode="clean",
+)
