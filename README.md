@@ -12,17 +12,18 @@ MTEB `AppsRetrieval`, CoIR `apps` test split (3,765 queries · 8,765 snippets):
 
 | Metric | Score |
 |---|---|
-| **NDCG@10** | **__NDCG__** |
-| **MRR@10** | **__MRR__** |
-| Recall@100 | __R100__ |
+| **NDCG@10** | **81.29** |
+| **MRR@10** | **78.02** |
+| Recall@100 | 97.53 |
 
 Efficiency (FAQ Q31 — resource usage is scored):
 
 | | |
 |---|---|
-| Model | `jinaai/jina-code-embeddings-0.5b` (__PARAMS__M params, 896-d) |
+| Model | `jinaai/jina-code-embeddings-0.5b` (494M params, 896-d) |
 | GPU required | **No** — runs on CPU |
-| Live query latency (CPU, 8,765-snippet index) | __LAT__ |
+| Live query latency (laptop CPU, 8,765-snippet index) | ~110–180 ms per query |
+| Peak RAM (full benchmark run) | 1.8 GB |
 | Index update for a new code version | only changed snippets are re-embedded |
 
 The full MTEB output is [`appsretrieval_results.json`](appsretrieval_results.json),
@@ -125,6 +126,14 @@ python -m src.query --apps "Given an array of n integers, find the length of the
 python -m src.query --apps -i          # interactive
 ```
 
+The first `--apps` run embeds all 8,765 solutions once and caches them in
+`.index/apps/`; every later query is ~110–180 ms on CPU. On Apple Silicon the
+one-time build is ~6 min on the GPU:
+
+```bash
+python -c "from src.retriever import CodeRetriever; from src.apps_index import apps_index; apps_index(CodeRetriever(device='mps'))"
+```
+
 **Index your own Python codebase, across versions:**
 
 ```bash
@@ -149,7 +158,7 @@ python -m src.evaluate --device mps     # same scores, faster on Apple Silicon
 
 Also writes `results/run_profile.json` (timings, model size, peak RAM).
 Encoding all 12.5k texts on a laptop CPU takes a few hours; a GPU/MPS does it in
-~25 min. The ranking is identical either way — the device only affects speed.
+~11 min. The ranking is identical either way — the device only affects speed.
 Live queries are one text each and run fast on CPU.
 
 **Tests:**
