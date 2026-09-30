@@ -23,7 +23,9 @@ from .versioned_index import VersionedIndex
 
 def _checkout(repo: str, rev: str, dest: str):
     # `git archive` exports a commit without touching the user's working tree
-    p = subprocess.run(["git", "-C", repo, "archive", "--format=tar", rev], check=True, capture_output=True)
+    p = subprocess.run(["git", "-C", repo, "archive", "--format=tar", rev], capture_output=True)
+    if p.returncode:
+        raise SystemExit(f"git archive {rev} failed: {p.stderr.decode().strip()}")
     subprocess.run(["tar", "-x", "-C", dest], input=p.stdout, check=True)
 
 

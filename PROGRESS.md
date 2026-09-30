@@ -55,3 +55,5 @@ summary, what was modified. Log it here as work happens.
   added `--device`, ran the official evaluation, rewrote README/SUBMISSION, filled
   the submission PPT template and the AI disclosure form, wrote the demo script.
   Amogh reviews and signs the disclosure form and records the video.
+
+- **2026-09-30** — fix versions demo: blobless clone made `git archive v2.31.0` fail mid-run; now full clone, git error surfaced, and the demo reuses a prebuilt index (`--rebuild` to re-embed). Verified: v2.31.0 +21 / v2.32.3 +78 new embeddings, ~120 ms/query on CPU.
