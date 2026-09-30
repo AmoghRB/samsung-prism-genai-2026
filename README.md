@@ -6,6 +6,16 @@ Given a library of Python code and a natural-language query, return the code
 snippets ranked by how relevant they are to that query. CPU-only, one 0.5B
 model, no GPU needed.
 
+## Submission
+
+| Item | Link |
+|---|---|
+| Demo video (4:32) | [Google Drive](https://drive.google.com/drive/folders/1OfFzQTw2Os6dTVjTHRL54IEJbnADayVx?usp=sharing) |
+| Presentation | [`submission/MSRIT_Waypoint_Submission.pptx`](submission/MSRIT_Waypoint_Submission.pptx) · [PDF](submission/MSRIT_Waypoint_Submission.pdf) |
+| AI disclosure (signed) | [`submission/MSRIT_Waypoint_AI_Disclosure.pdf`](submission/MSRIT_Waypoint_AI_Disclosure.pdf) · [DOCX](submission/MSRIT_Waypoint_AI_Disclosure.docx) |
+| Results | [`appsretrieval_results.json`](appsretrieval_results.json) |
+| Release tag | `PRISM_GENAI_HACKATHON_Y2026` |
+
 ## Results
 
 MTEB `AppsRetrieval`, CoIR `apps` test split (3,765 queries · 8,765 snippets):
